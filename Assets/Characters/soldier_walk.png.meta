@@ -1,0 +1,827 @@
+fileFormatVersion: 2
+guid: d3177d51bce11439db389564162c5083
+timeCreated: 1463078431
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: soldier_0
+    21300002: soldier_1
+    21300004: soldier_2
+    21300006: soldier_3
+    21300008: soldier_4
+    21300010: soldier_5
+    21300012: soldier_6
+    21300014: soldier_7
+    21300016: soldier_8
+    21300018: soldier_9
+    21300020: soldier_10
+    21300022: soldier_11
+    21300024: soldier_12
+    21300026: soldier_13
+    21300028: soldier_14
+    21300030: soldier_15
+    21300032: soldier_16
+    21300034: soldier_17
+    21300036: soldier_18
+    21300038: soldier_19
+    21300040: soldier_20
+    21300042: soldier_21
+    21300044: soldier_22
+    21300046: soldier_23
+    21300048: soldier_24
+    21300050: soldier_25
+    21300052: soldier_26
+    21300054: soldier_27
+    21300056: soldier_28
+    21300058: soldier_29
+    21300060: soldier_30
+    21300062: soldier_31
+    21300064: soldier_32
+    21300066: soldier_33
+    21300068: soldier_34
+    21300070: soldier_35
+    21300072: soldier_walk_0
+    21300074: soldier_walk_1
+    21300076: soldier_walk_2
+    21300078: soldier_walk_3
+    21300080: soldier_walk_4
+    21300082: soldier_walk_5
+    21300084: soldier_walk_6
+    21300086: soldier_walk_7
+    21300088: soldier_walk_8
+    21300090: soldier_walk_9
+    21300092: soldier_walk_10
+    21300094: soldier_walk_11
+    21300096: soldier_walk_12
+    21300098: soldier_walk_13
+    21300100: soldier_walk_14
+    21300102: soldier_walk_15
+    21300104: soldier_walk_16
+    21300106: soldier_walk_17
+    21300108: soldier_walk_18
+    21300110: soldier_walk_19
+    21300112: soldier_walk_20
+    21300114: soldier_walk_21
+    21300116: soldier_walk_22
+    21300118: soldier_walk_23
+    21300120: soldier_walk_24
+    21300122: soldier_walk_25
+    21300124: soldier_walk_26
+    21300126: soldier_walk_27
+    21300128: soldier_walk_28
+    21300130: soldier_walk_29
+    21300132: soldier_walk_30
+    21300134: soldier_walk_31
+    21300136: soldier_walk_32
+    21300138: soldier_walk_33
+    21300140: soldier_walk_34
+    21300142: soldier_walk_35
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: soldier_walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.733185, y: 38.062775}
+        - {x: -18.733185, y: -11.937225}
+        - {x: 17.266815, y: -11.937225}
+        - {x: 17.266815, y: 37.062775}
+        - {x: 15.266815, y: 38.062775}
+    - name: soldier_walk_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.266815, y: 34.062775}
+        - {x: 8.266815, y: 38.062775}
+        - {x: -11.733185, y: 38.062775}
+        - {x: -18.733185, y: 26.062775}
+        - {x: -18.733185, y: -1.9372253}
+        - {x: -16.733185, y: -11.937225}
+        - {x: 10.266815, y: -11.937225}
+        - {x: 17.266815, y: 0.06277466}
+    - name: soldier_walk_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.733185, y: 37.062775}
+        - {x: -15.733185, y: 36.062775}
+        - {x: -18.733185, y: 34.062775}
+        - {x: -18.733185, y: -10.937225}
+        - {x: -17.733185, y: -12.937225}
+        - {x: 13.266815, y: -12.937225}
+        - {x: 17.266815, y: -6.9372253}
+        - {x: 17.266815, y: 21.062775}
+        - {x: 12.266815, y: 37.062775}
+    - name: soldier_walk_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.733185, y: 37.062775}
+        - {x: -11.733185, y: 33.062775}
+        - {x: -18.733185, y: 18.062775}
+        - {x: -18.733185, y: 1.0627747}
+        - {x: -9.733185, y: -10.937225}
+        - {x: -5.733185, y: -12.937225}
+        - {x: 12.266815, y: -12.937225}
+        - {x: 17.266815, y: -2.9372253}
+        - {x: 17.266815, y: 20.062775}
+        - {x: 8.266815, y: 37.062775}
+    - name: soldier_walk_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.733185, y: 38.062775}
+        - {x: -18.733185, y: 26.062775}
+        - {x: -18.733185, y: -4.9372253}
+        - {x: -9.733185, y: -12.937225}
+        - {x: 17.266815, y: -12.937225}
+        - {x: 17.266815, y: 33.062775}
+        - {x: 12.266815, y: 38.062775}
+    - name: soldier_walk_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.266815, y: 34.062775}
+        - {x: 12.266815, y: 38.062775}
+        - {x: -14.733185, y: 38.062775}
+        - {x: -18.733185, y: 30.062775}
+        - {x: -18.733185, y: -5.9372253}
+        - {x: -10.733185, y: -11.937225}
+        - {x: 10.266815, y: -11.937225}
+        - {x: 17.266815, y: 0.06277466}
+    - name: soldier_walk_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.733185, y: 37.062775}
+        - {x: -14.733185, y: 35.062775}
+        - {x: -18.733185, y: 19.062775}
+        - {x: -18.733185, y: -1.9372253}
+        - {x: -11.733185, y: -12.937225}
+        - {x: 12.266815, y: -12.937225}
+        - {x: 17.266815, y: -7.9372253}
+        - {x: 17.266815, y: 34.062775}
+        - {x: 7.266815, y: 37.062775}
+    - name: soldier_walk_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.266815, y: 37.062775}
+        - {x: -16.733185, y: 37.062775}
+        - {x: -18.733185, y: 26.062775}
+        - {x: -18.733185, y: -1.9372253}
+        - {x: -12.733185, y: -12.937225}
+        - {x: 3.2668152, y: -12.937225}
+        - {x: 8.266815, y: -10.937225}
+        - {x: 17.266815, y: -2.9372253}
+        - {x: 17.266815, y: 20.062775}
+        - {x: 14.266815, y: 32.062775}
+    - name: soldier_walk_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.733154, y: 38.062775}
+        - {x: -18.733154, y: -12.937225}
+        - {x: 8.266846, y: -12.937225}
+        - {x: 17.266846, y: -3.9372253}
+        - {x: 17.266846, y: 22.062775}
+        - {x: 11.266846, y: 38.062775}
+    - name: soldier_walk_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.733185, y: 38.062775}
+        - {x: -11.733185, y: 34.062775}
+        - {x: -12.733185, y: 26.062775}
+        - {x: -12.733185, y: -9.937225}
+        - {x: -8.733185, y: -12.937225}
+        - {x: 5.266815, y: -12.937225}
+        - {x: 11.266815, y: -9.937225}
+        - {x: 13.266815, y: -2.9372253}
+        - {x: 13.266815, y: 27.062775}
+        - {x: 9.266815, y: 38.062775}
+    - name: soldier_walk_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.733185, y: 37.062775}
+        - {x: -15.733185, y: 25.062775}
+        - {x: -15.733185, y: -6.9372253}
+        - {x: -13.733185, y: -11.937225}
+        - {x: -5.733185, y: -11.937225}
+        - {x: -2.7331848, y: -8.937225}
+        - {x: 2.2668152, y: -12.937225}
+        - {x: 12.266815, y: -12.937225}
+        - {x: 14.266815, y: -7.9372253}
+        - {x: 14.266815, y: 27.062775}
+        - {x: 9.266815, y: 37.062775}
+    - name: soldier_walk_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.733185, y: 38.062775}
+        - {x: -13.733185, y: -11.937225}
+        - {x: 9.266815, y: -11.937225}
+        - {x: 14.266815, y: 3.0627747}
+        - {x: 14.266815, y: 33.062775}
+        - {x: 7.266815, y: 38.062775}
+    - name: soldier_walk_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.733185, y: 38.062775}
+        - {x: -11.733185, y: -6.9372253}
+        - {x: -8.733185, y: -10.937225}
+        - {x: -5.733185, y: -11.937225}
+        - {x: 8.266815, y: -11.937225}
+        - {x: 14.266815, y: -3.9372253}
+        - {x: 14.266815, y: 35.062775}
+        - {x: 10.266815, y: 38.062775}
+    - name: soldier_walk_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.733185, y: 38.062775}
+        - {x: -12.733185, y: 33.062775}
+        - {x: -12.733185, y: -10.937225}
+        - {x: -10.733185, y: -12.937225}
+        - {x: 7.266815, y: -12.937225}
+        - {x: 16.266815, y: -3.9372253}
+        - {x: 16.266815, y: 35.062775}
+        - {x: 10.266815, y: 38.062775}
+    - name: soldier_walk_14
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.266815, y: 37.062775}
+        - {x: -12.733185, y: 37.062775}
+        - {x: -14.733185, y: 36.062775}
+        - {x: -14.733185, y: -12.937225}
+        - {x: 8.266815, y: -12.937225}
+        - {x: 17.266815, y: -2.9372253}
+        - {x: 17.266815, y: 33.062775}
+    - name: soldier_walk_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.266815, y: 37.062775}
+        - {x: -11.733185, y: 37.062775}
+        - {x: -11.733185, y: -5.9372253}
+        - {x: -10.733185, y: -9.937225}
+        - {x: -8.733185, y: -12.937225}
+        - {x: 6.266815, y: -12.937225}
+        - {x: 15.266815, y: -2.9372253}
+        - {x: 15.266815, y: 32.062775}
+    - name: soldier_walk_16
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.733185, y: 38.062775}
+        - {x: -11.733185, y: -3.9372253}
+        - {x: -8.733185, y: -11.937225}
+        - {x: -3.7331848, y: -12.937225}
+        - {x: 11.266815, y: -12.937225}
+        - {x: 14.266815, y: -11.937225}
+        - {x: 14.266815, y: 38.062775}
+    - name: soldier_walk_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.733154, y: 38.062775}
+        - {x: -12.733154, y: 34.062775}
+        - {x: -12.733154, y: -8.937225}
+        - {x: -11.733154, y: -12.937225}
+        - {x: 7.2668457, y: -12.937225}
+        - {x: 13.266846, y: -0.93722534}
+        - {x: 13.266846, y: 35.062775}
+        - {x: 7.2668457, y: 38.062775}
+    - name: soldier_walk_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.266815, y: 36.062775}
+        - {x: 7.266815, y: 38.062775}
+        - {x: -9.733185, y: 38.062775}
+        - {x: -12.733185, y: 34.062775}
+        - {x: -17.733185, y: 17.062775}
+        - {x: -18.733185, y: 11.062775}
+        - {x: -18.733185, y: -12.937225}
+        - {x: 14.266815, y: -12.937225}
+        - {x: 14.266815, y: -11.937225}
+        - {x: 17.266815, y: 4.0627747}
+        - {x: 17.266815, y: 15.062775}
+    - name: soldier_walk_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.266815, y: 38.062775}
+        - {x: -10.733185, y: 38.062775}
+        - {x: -13.733185, y: 36.062775}
+        - {x: -17.733185, y: 16.062775}
+        - {x: -17.733185, y: -3.9372253}
+        - {x: -9.733185, y: -12.937225}
+        - {x: 15.266815, y: -12.937225}
+        - {x: 18.266815, y: -2.9372253}
+        - {x: 18.266815, y: 30.062775}
+        - {x: 14.266815, y: 36.062775}
+    - name: soldier_walk_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.733185, y: 38.062775}
+        - {x: -13.733185, y: 36.062775}
+        - {x: -17.733185, y: 31.062775}
+        - {x: -17.733185, y: -6.9372253}
+        - {x: -15.733185, y: -12.937225}
+        - {x: 17.266815, y: -12.937225}
+        - {x: 17.266815, y: 30.062775}
+        - {x: 10.266815, y: 38.062775}
+    - name: soldier_walk_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.266815, y: 37.062775}
+        - {x: -14.733185, y: 37.062775}
+        - {x: -16.733185, y: 28.062775}
+        - {x: -16.733185, y: -9.937225}
+        - {x: -11.733185, y: -12.937225}
+        - {x: 16.266815, y: -12.937225}
+        - {x: 17.266815, y: -9.937225}
+        - {x: 17.266815, y: 30.062775}
+        - {x: 14.266815, y: 35.062775}
+    - name: soldier_walk_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.266815, y: 36.062775}
+        - {x: 12.266815, y: 38.062775}
+        - {x: -7.733185, y: 38.062775}
+        - {x: -13.733185, y: 36.062775}
+        - {x: -17.733185, y: 30.062775}
+        - {x: -17.733185, y: -4.9372253}
+        - {x: -15.733185, y: -12.937225}
+        - {x: 12.266815, y: -12.937225}
+        - {x: 13.266815, y: -11.937225}
+        - {x: 17.266815, y: -4.9372253}
+        - {x: 17.266815, y: 25.062775}
+    - name: soldier_walk_23
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.266815, y: 38.062775}
+        - {x: -13.733185, y: 38.062775}
+        - {x: -17.733185, y: 24.062775}
+        - {x: -17.733185, y: -9.937225}
+        - {x: -14.733185, y: -12.937225}
+        - {x: 10.266815, y: -12.937225}
+        - {x: 14.266815, y: -11.937225}
+        - {x: 18.266815, y: -3.9372253}
+        - {x: 18.266815, y: 15.062775}
+        - {x: 15.266815, y: 37.062775}
+    - name: soldier_walk_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.266815, y: 38.062775}
+        - {x: -9.733185, y: 38.062775}
+        - {x: -17.733185, y: 21.062775}
+        - {x: -17.733185, y: 2.0627747}
+        - {x: -13.733185, y: -9.937225}
+        - {x: -8.733185, y: -12.937225}
+        - {x: 11.266815, y: -12.937225}
+        - {x: 18.266815, y: -1.9372253}
+        - {x: 18.266815, y: 16.062775}
+        - {x: 15.266815, y: 36.062775}
+    - name: soldier_walk_25
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.266815, y: 37.062775}
+        - {x: -10.733185, y: 37.062775}
+        - {x: -13.733185, y: 34.062775}
+        - {x: -17.733185, y: 18.062775}
+        - {x: -17.733185, y: -3.9372253}
+        - {x: -10.733185, y: -12.937225}
+        - {x: 0.2668152, y: -12.937225}
+        - {x: 10.266815, y: -10.937225}
+        - {x: 17.266815, y: -1.9372253}
+        - {x: 17.266815, y: 22.062775}
+        - {x: 14.266815, y: 35.062775}
+    - name: soldier_walk_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.266846, y: 38.062775}
+        - {x: -10.733154, y: 38.062775}
+        - {x: -13.733154, y: 36.062775}
+        - {x: -17.733154, y: 17.062775}
+        - {x: -17.733154, y: -2.9372253}
+        - {x: -11.733154, y: -12.937225}
+        - {x: 16.266846, y: -12.937225}
+        - {x: 18.266846, y: -4.9372253}
+        - {x: 18.266846, y: 29.062775}
+        - {x: 14.266846, y: 36.062775}
+    - name: soldier_walk_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.733185, y: 38.06278}
+        - {x: -14.733185, y: 36.06278}
+        - {x: -14.733185, y: 2.0627785}
+        - {x: -9.733185, y: -12.937222}
+        - {x: 11.266815, y: -12.937222}
+        - {x: 11.266815, y: 34.06278}
+        - {x: 8.266815, y: 38.06278}
+    - name: soldier_walk_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.733185, y: 37.06278}
+        - {x: -15.733185, y: -8.937222}
+        - {x: -10.733185, y: -12.937222}
+        - {x: 10.266815, y: -12.937222}
+        - {x: 14.266815, y: -9.937222}
+        - {x: 14.266815, y: 10.062778}
+        - {x: 10.266815, y: 37.06278}
+    - name: soldier_walk_29
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.733185, y: 38.06278}
+        - {x: -15.733185, y: 4.0627785}
+        - {x: -8.733185, y: -11.937222}
+        - {x: 12.266815, y: -11.937222}
+        - {x: 12.266815, y: 37.06278}
+        - {x: 11.266815, y: 38.06278}
+    - name: soldier_walk_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.733185, y: -0.9372215}
+        - {x: -6.733185, y: -11.937222}
+        - {x: 6.266815, y: -11.937222}
+        - {x: 10.266815, y: -7.9372215}
+        - {x: 10.266815, y: 38.06278}
+        - {x: -13.733185, y: 38.06278}
+        - {x: -15.733185, y: 37.06278}
+    - name: soldier_walk_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.266815, y: 36.06278}
+        - {x: 4.266815, y: 38.06278}
+        - {x: -11.733185, y: 38.06278}
+        - {x: -15.733185, y: 36.06278}
+        - {x: -17.733185, y: 22.062778}
+        - {x: -17.733185, y: -4.9372215}
+        - {x: -12.733185, y: -10.937222}
+        - {x: -4.733185, y: -12.937222}
+        - {x: 7.266815, y: -12.937222}
+        - {x: 11.266815, y: -8.937222}
+        - {x: 10.266815, y: -4.9372215}
+        - {x: 11.266815, y: -2.9372215}
+    - name: soldier_walk_32
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.266815, y: 37.06278}
+        - {x: -16.733185, y: 37.06278}
+        - {x: -18.733185, y: 36.06278}
+        - {x: -18.733185, y: -12.937222}
+        - {x: 11.266815, y: -12.937222}
+        - {x: 13.266815, y: -0.9372215}
+        - {x: 13.266815, y: 25.062778}
+        - {x: 12.266815, y: 35.06278}
+    - name: soldier_walk_33
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.733185, y: 37.06278}
+        - {x: -16.733185, y: -8.937222}
+        - {x: -15.733185, y: -12.937222}
+        - {x: 8.266815, y: -12.937222}
+        - {x: 10.266815, y: -6.9372215}
+        - {x: 10.266815, y: 35.06278}
+        - {x: 4.266815, y: 37.06278}
+    - name: soldier_walk_34
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.733185, y: 38.06278}
+        - {x: -15.733185, y: 1.0627785}
+        - {x: -7.733185, y: -12.937222}
+        - {x: 3.2668152, y: -12.937222}
+        - {x: 10.266815, y: -2.9372215}
+        - {x: 10.266815, y: 38.06278}
+    - name: soldier_walk_35
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.511456, y: 0.2021441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.733154, y: 38.06278}
+        - {x: -14.733154, y: -7.9372215}
+        - {x: -10.733154, y: -12.937222}
+        - {x: 9.266846, y: -12.937222}
+        - {x: 10.266846, y: -11.937222}
+        - {x: 11.266846, y: 2.0627785}
+        - {x: 11.266846, y: 38.06278}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

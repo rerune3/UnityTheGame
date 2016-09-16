@@ -1,0 +1,40 @@
+{"items" : [
+  
+  {
+	  "itemName": "Dragon Long Sword",
+	  "itemType": "WEAPON",
+	  "itemSubType": "SWORD",
+	  "itemID": 0,
+	  "itemDescription": "A blade carved from the fangs of a fallen dragon.",
+	  "canEquip": true
+  },
+
+  {
+    "itemName": "Wolf Dagger",
+	"itemType": "WEAPON",
+	"itemSubType": "DAGGER",
+	"itemID": 0,
+	"itemDescription": "Just a dagger with a fancy name.",
+	"canEquip": true
+  },
+
+  {
+    "itemName": "Righteous Sword",
+	"itemType": "WEAPON",
+	"itemSubType": "SWORD",
+	"itemID": 0,
+	"itemDescription": "A pretty cool sword with a cool name.",
+	"canEquip": true
+  },
+
+  {
+    "itemName": "Iron Armor",
+	"itemType": "EQUIPMENT",
+	"itemSubType": "BODY",
+	"itemID": 0,
+	"itemDescription": "An Iron plate of armor that protected even the Gods themselves.",
+	"canEquip": true
+  }
+  
+]
+}
