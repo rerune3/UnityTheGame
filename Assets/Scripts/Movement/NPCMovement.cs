@@ -75,7 +75,7 @@ public class NPCMovement : MonoBehaviour
 	private bool DestinationHasObstacleInPath() {
 		RaycastHit2D raycast = Physics2D.BoxCast (transform.position, 
 			new Vector3(0.3f, 0.3f), 0f, direction, Vector3.Distance(transform.position, destination));
-		return raycast != null;
+		return raycast.collider != null;
 	}
 
 	private bool DestinationIsOutsideZone() {
