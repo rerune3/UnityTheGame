@@ -25,10 +25,11 @@ public class NPCMovement : MonoBehaviour
 	void Start ()
 	{
 		anim = GetComponent<Animator>();
-		zone = new Bounds (transform.position, zoneSize);
-		Utilities.DrawBounds (zone);
+        zone = new Bounds(transform.position, zoneSize);
 
-		currentState = State.MOVE;
+        Utilities.DrawBounds(zone);
+
+        currentState = State.MOVE;
 		actualSpeed = speed;
 
 		SetDirectionAndDestination ();
@@ -38,7 +39,7 @@ public class NPCMovement : MonoBehaviour
 	// Update is called once per frame
 	void LateUpdate()
 	{
-		if (currentState == State.MOVE) {
+        if (currentState == State.MOVE) {
 			if (!ReachedDestination ()) {
 				MoveNPC ();
 			} else {
@@ -75,7 +76,7 @@ public class NPCMovement : MonoBehaviour
 	private bool DestinationHasObstacleInPath() {
 		RaycastHit2D raycast = Physics2D.BoxCast (transform.position, 
 			new Vector3(0.3f, 0.3f), 0f, direction, Vector3.Distance(transform.position, destination));
-		return raycast.collider != null;
+        return raycast.collider != null;
 	}
 
 	private bool DestinationIsOutsideZone() {
