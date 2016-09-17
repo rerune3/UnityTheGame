@@ -23,7 +23,7 @@ public class Surveyor : MonoBehaviour {
 		createWaypoints();
 		connectWaypoints();
 		identifyBadWaypoints ();
-		drawWaypointConnections ();
+		//drawWaypointConnections ();
 	}
 
 	// Use this for initialization
