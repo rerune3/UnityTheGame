@@ -64,6 +64,14 @@ public class Utilities : MonoBehaviour {
 		return target - origin;
 	}
 
+    public static void PrintVectors(Vector3[] arr)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Debug.Log(arr[i]);
+        }
+    }
+
 	public static void DrawBounds(Bounds bounds) {
 		Vector3 topRight = bounds.max;
 		Vector3 topLeft = topRight - new Vector3 (bounds.extents.x * 2, 0);
