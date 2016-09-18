@@ -14,25 +14,31 @@ public class FollowLogic : MonoBehaviour {
 	private float actualSpeed;
 	private float dist_thresh = 0.08f;
 
+	private Vector3 startingPoint;
+
 //	 Use this for initialization
 	void Start () {
 		path = new List<Vector3> ();
 		anim = GetComponent<Animator> ();
 
         actualSpeed = speed;
+		startingPoint = transform.position;
 		ConstructPath (targetObject.transform.position);
     }
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.DrawLine (transform.position, path[0], Color.blue, Mathf.Infinity);
-		Debug.DrawLine (path[0], path[1], Color.blue, Mathf.Infinity);
-		Debug.DrawLine (path[1], path[2], Color.blue, Mathf.Infinity);
+		if (path.Count > 0) {
+			Debug.DrawLine (startingPoint, path [0], Color.blue, Mathf.Infinity);
+			for (int i = 0; i < path.Count - 1; i++) {
+				Debug.DrawLine (path[i], path[i+1], Color.blue, Mathf.Infinity);
+			}
+		}
 	}
 
     private void ConstructPath(Vector3 target)
     {
-		Vector2 initalDirection = new Vector3 ((target - transform.position).x, 0).normalized;
+		Vector2 initalDirection = new Vector3 ((target - startingPoint).x, 0).normalized;
 		ConstructPathHelper (initalDirection*-1, transform.position, target, 0);
 
 		Debug.Log ("Path: \n");
@@ -54,39 +60,77 @@ public class FollowLogic : MonoBehaviour {
 			return;
 		}
 
-		float collisionThresh = 0.2f;
+		float collisionThresh = 0.05f;
+		float arbitiaryMovementDistance = 1.5f;
 
 		Vector3 displacement = finalDestination - currentPosition;
 		RaycastHit2D raycast;
+		Vector3 tempDestination;
+		Vector2 direction;
 
-
-		// Try moving in the +x direction.
-		Vector3 tempDestination = currentPosition + new Vector3(displacement.x, 0);
-		Vector2 direction = new Vector2 (displacement.x, 0).normalized;
-		if (lastDir != direction) {
-			raycast = GetObstacleBetween (tempDestination, direction);
-
-			if (raycast.collider == null) {
-				// If there is no obstacle in the way.
-				path.Add (tempDestination);
-				// Recurse.
-				ConstructPathHelper (direction, tempDestination, finalDestination, i);
-				return;
-			} else if (raycast.point.x - transform.position.x > collisionThresh) {
-				// If there is an obstacle in the way and it's not too close.
-				// Stop just before the obstacle.
-				tempDestination = raycast.point + (direction * -1 * collisionThresh);
-				path.Add (tempDestination);
-				ConstructPathHelper (direction, tempDestination, finalDestination, i);
-				return;
+		// If havent reached x destination.
+		if (currentPosition.x != finalDestination.x) {
+			if (true) {
+				// Try moving in the x direction, in the direction of the target.
+				tempDestination = currentPosition + new Vector3 (displacement.x, 0);
+				direction = new Vector2 (displacement.x, 0).normalized;
+				if (lastDir != direction && direction != Vector2.zero && lastDir.x == 0) {
+					raycast = GetObstacleBetween (currentPosition, tempDestination, direction);
+			
+					if (raycast.collider == null) {
+						// If there is no obstacle in the way.
+						path.Add (tempDestination);
+						// Recurse.
+						ConstructPathHelper (direction, tempDestination, finalDestination, i);
+						return;
+					} else if (Mathf.Abs (raycast.point.x - currentPosition.x) > collisionThresh) {
+						// If there is an obstacle in the way and it's not too close.
+						// Stop just before the obstacle.
+						tempDestination = raycast.point + (direction * -1 * collisionThresh);
+						path.Add (tempDestination);
+						ConstructPathHelper (direction, tempDestination, finalDestination, i);
+						return;
+					}
+				} // end if
 			}
-		} // end if
+		}
 
-		// Try moving in the +y direction.
-		tempDestination = currentPosition + new Vector3(0, displacement.y);
-		direction = new Vector3 (0, displacement.y).normalized;
-		if (lastDir != direction) {
-			raycast = GetObstacleBetween (tempDestination, direction);
+		// If havent reached y destination.
+		if (currentPosition.y != finalDestination.y) {
+			// Try moving in the y direction, in the direction of the target.
+			tempDestination = currentPosition + new Vector3 (0, displacement.y);
+			direction = new Vector3 (0, displacement.y).normalized;
+			if (lastDir != direction && direction != Vector2.zero && lastDir.y == 0) {
+				raycast = GetObstacleBetween (currentPosition, tempDestination, direction);
+
+				if (raycast.collider == null) {
+					// If there is no obstacle in the way.
+					path.Add (tempDestination);
+					// Recurse.
+					ConstructPathHelper (direction, tempDestination, finalDestination, i);
+					return;
+				} else if (Mathf.Abs (raycast.point.y - currentPosition.y) > collisionThresh) {
+					// If there is an obstacle in the way and it's not too close.
+					// Stop just before the obstacle.
+					tempDestination = raycast.point + (direction * -1 * collisionThresh);
+					path.Add (tempDestination);
+					ConstructPathHelper (direction, tempDestination, finalDestination, i);
+					return;
+				}
+			}
+		}
+
+		float xSign = displacement.x / Mathf.Abs (displacement.x);
+		float ySign = displacement.y / Mathf.Abs (displacement.y);
+
+		// Is arbitiary.
+		Vector3 newDisplacement = new Vector3 (arbitiaryMovementDistance * xSign, arbitiaryMovementDistance * ySign);
+
+		// Try moving in the x direction, the opposite direction of the target.
+		tempDestination = currentPosition + new Vector3(newDisplacement.x, 0);
+		direction = new Vector3 (newDisplacement.x, 0).normalized;
+		if (lastDir != direction && direction != Vector2.zero && lastDir.x == 0) {
+			raycast = GetObstacleBetween (currentPosition, tempDestination, direction);
 
 			if (raycast.collider == null) {
 				// If there is no obstacle in the way.
@@ -94,7 +138,7 @@ public class FollowLogic : MonoBehaviour {
 				// Recurse.
 				ConstructPathHelper (direction, tempDestination, finalDestination, i);
 				return;
-			} else if (raycast.point.y - transform.position.y > collisionThresh) {
+			} else if (Mathf.Abs(raycast.point.x - currentPosition.x) > collisionThresh) {
 				// If there is an obstacle in the way and it's not too close.
 				// Stop just before the obstacle.
 				tempDestination = raycast.point + (direction * -1 * collisionThresh);
@@ -104,11 +148,11 @@ public class FollowLogic : MonoBehaviour {
 			}
 		}
 
-		// Try moving in the -x direction.
-		tempDestination = currentPosition - new Vector3(displacement.x, 0);
-		direction = new Vector3 (displacement.x * -1, 0).normalized;
-		if (lastDir != direction) {
-			raycast = GetObstacleBetween (tempDestination, direction);
+		// Try moving in the y direction, the opposite direction of the target.
+		tempDestination = currentPosition + new Vector3(0, newDisplacement.y);
+		direction = new Vector3 (0, newDisplacement.y).normalized;
+		if (lastDir != direction && direction != Vector2.zero && lastDir.y == 0) {
+			raycast = GetObstacleBetween (currentPosition, tempDestination, direction);
 
 			if (raycast.collider == null) {
 				// If there is no obstacle in the way.
@@ -116,29 +160,7 @@ public class FollowLogic : MonoBehaviour {
 				// Recurse.
 				ConstructPathHelper (direction, tempDestination, finalDestination, i);
 				return;
-			} else if (raycast.point.x - transform.position.x > collisionThresh) {
-				// If there is an obstacle in the way and it's not too close.
-				// Stop just before the obstacle.
-				tempDestination = raycast.point + (direction * -1 * collisionThresh);
-				path.Add (tempDestination);
-				ConstructPathHelper (direction, tempDestination, finalDestination, i);
-				return;
-			}
-		}
-
-		// Try moving in the -y direction.
-		tempDestination = currentPosition - new Vector3(0, displacement.y);
-		direction = new Vector3 (0, displacement.y * -1).normalized;
-		if (lastDir != direction) {
-			raycast = GetObstacleBetween (tempDestination, direction);
-
-			if (raycast.collider == null) {
-				// If there is no obstacle in the way.
-				path.Add (tempDestination);
-				// Recurse.
-				ConstructPathHelper (direction, tempDestination, finalDestination, i);
-				return;
-			} else if (raycast.point.y - transform.position.y > collisionThresh) {
+			} else if (Mathf.Abs(raycast.point.y - currentPosition.y) > collisionThresh) {
 				// If there is an obstacle in the way and it's not too close.
 				// Stop just before the obstacle.
 				tempDestination = raycast.point + (direction * -1 * collisionThresh);
@@ -149,11 +171,13 @@ public class FollowLogic : MonoBehaviour {
 		}
 	}
 
-	private RaycastHit2D GetObstacleBetween(Vector3 destination, Vector3 direction) {
-		RaycastHit2D raycast = Physics2D.BoxCast (transform.position, 
-			new Vector3(0.3f, 0.3f), 0f, direction, Vector3.Distance(transform.position, destination));
+	// Keep working on this.
+//	private bool goToLocation (Vector3 currPos, Vector3 destination) {
+//	}
+
+	private RaycastHit2D GetObstacleBetween(Vector3 start, Vector3 end, Vector3 direction) {
+		RaycastHit2D raycast = Physics2D.Linecast (start, end);
 		if (raycast.collider != null) {
-			Debug.Log (raycast.collider.name);
 			if (raycast.collider.name == "Player") {
 				return new RaycastHit2D();
 			}
