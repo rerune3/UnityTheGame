@@ -64,6 +64,32 @@ public class Utilities : MonoBehaviour {
 		return target - origin;
 	}
 
+//	public Waypoint
+
+	public static Waypoint GetClosestWaypointTo(Vector3 position) {
+		GameObject surveryor = GameObject.Find ("Surveyor");
+		Surveyor surveyLogic = surveryor.GetComponent<Surveyor> ();
+		Waypoint[][] waypoints = surveyLogic.GetWaypoints ();
+
+		float shortestDistance = Mathf.Infinity;
+		Vector2 indexOfClosest = new Vector2 (0, 0);
+		for (int i = 0; i < waypoints.Length; i++) {
+			for (int j = 0; j < waypoints [i].Length; j++) {
+				Waypoint w = waypoints [i] [j];
+				if (Vector3.Distance (w.position, position) < shortestDistance) {
+					shortestDistance = Vector3.Distance (w.position, position);
+					indexOfClosest = new Vector2 (i, j);
+				}
+			}
+		}
+
+		return waypoints [(int)indexOfClosest.x] [(int)indexOfClosest.y];
+	}
+
+	public static Vector3 GetInvalidVector() {
+		return new Vector3 (Mathf.Infinity, Mathf.Infinity);
+	}
+
     public static void PrintVectors(Vector3[] arr)
     {
         for (int i = 0; i < arr.Length; i++)

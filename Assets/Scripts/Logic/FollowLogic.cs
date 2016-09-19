@@ -22,101 +22,67 @@ public class FollowLogic : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 
         actualSpeed = speed;
-		startingPoint = transform.position;
+		Waypoint originWaypoint = Utilities.GetClosestWaypointTo (transform.position);
+		Waypoint targetWaypoint = Utilities.GetClosestWaypointTo (targetObject.transform.position);
+		ConstructPathBetween (originWaypoint, targetWaypoint);
 
-        ConstructPath (targetObject.transform.position);
-    }
-	
-	// Update is called once per frame
-	void Update () {
 		if (path.Count > 0) {
-			Debug.DrawLine (startingPoint, path [0], Color.blue, Mathf.Infinity);
+			Debug.DrawLine (originWaypoint.position, path [0], Color.blue, Mathf.Infinity);
 			for (int i = 0; i < path.Count - 1; i++) {
 				Debug.DrawLine (path[i], path[i+1], Color.blue, Mathf.Infinity);
 			}
 		}
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
 	}
 
-    private void ConstructPath(Vector3 target)
-    {
-		Vector2 initalDirection = new Vector3 ((target - startingPoint).x, 0).normalized;
-		ConstructPathHelper (initalDirection*-1, transform.position, target, 0);
+	private void ConstructPathBetween(Waypoint origin, Waypoint target) {
+		List<int> visited = new List<int> ();
+		ConstructPathHelper (origin, target, visited, 0);
+	}
 
-		Debug.Log ("Path: \n");
-		for (int i = 0; i < path.Count; i++) {
-			Debug.Log (path[i]);
-		}
-    }
-
-	private void ConstructPathHelper(Vector2 lastDir, Vector3 currentPosition, Vector3 finalDestination, int i) {
-		// If already at destination.
-		if (Vector3.Distance (currentPosition, finalDestination) < 0.05f) {
+	private void ConstructPathHelper(Waypoint curr, Waypoint target, List<int> visited, int i) {
+		if (curr.value == target.value) {
 			return;
 		}
 
 		i++;
-
-		if (i > 2) {
-			Debug.Log ("Probably went on for too long");
+		if (i > 1000) {
+			Debug.Log ("Went on too long probably");
 			return;
 		}
 
-        // Move in the x axis, in the direction of the final destination unless we just moved in the x-axis.
-        Vector3 oneComponentDisplacement = new Vector3((finalDestination - currentPosition).x, 0);
-        Vector3 start = currentPosition;
-        Vector3 location = currentPosition + oneComponentDisplacement;
-        Vector2 direction = (location - start).normalized;
-        //Utilities.PrintVectors(new []{oneComponentDisplacement, start, location, direction});
-        //Debug.Log("Done.");
-        if (lastDir != direction && GoToLocation(start, location))
-        {
-            ConstructPathHelper(direction, start, finalDestination, i);
-            return;
-        } else
-        {
-            // Move in the y axis, in the direction of the final destination.
-            oneComponentDisplacement = new Vector3(0, (finalDestination - currentPosition).y);
-            start = currentPosition;
-            location = currentPosition + oneComponentDisplacement;
-            direction = (location - start).normalized;
-            if (lastDir != direction && GoToLocation(start, location))
-            {
-                ConstructPathHelper(direction, start, finalDestination, i);
-                return;
-            }
-        }
- 
-    }
+		visited.Add (curr.value);
+		Waypoint closestWaypoint = GetWaypointClosestToTarget (curr, target, visited);
+		if (closestWaypoint != null) {
+			path.Add (closestWaypoint.position);
+			ConstructPathHelper (closestWaypoint, target, visited, i);
+		}
 
-	// Returns whether or not it was able to go to location.
-	private bool GoToLocation (Vector3 start, Vector3 location) {
-        Vector2 direction = (location - start).normalized;
-        float collisionThresh = 0.05f;
-
-        RaycastHit2D raycast = GetObstacleBetween(start, location, direction);
-        if (raycast.collider == null)
-        {
-            path.Add(location);
-            return true;
-        } else
-        {
-            float distanceFromObstacle = Vector3.Distance(raycast.point, start);
-            if (distanceFromObstacle >= collisionThresh)
-            {
-                // Move to arbitiary distance just before the obstacle.
-                path.Add(raycast.point + (direction * collisionThresh * -1));
-                return true;
-            } else
-            {
-                return false;
-            }
-        }
-    }
-
-    private RaycastHit2D GetObstacleBetween(Vector3 start, Vector3 end, Vector3 direction) {
-		RaycastHit2D raycast = Physics2D.Linecast (start, end);
-		return raycast;
 	}
+
+	private Waypoint GetWaypointClosestToTarget(Waypoint waypoint, Waypoint target, List<int> visited) {
+		float shortestDistance = Mathf.Infinity;
+		int indexOfClosest = -1;
+		float distance = 0.0f;
+		// Iterate through adjacent waypoints.
+		for (int i = 0; i < waypoint.adjWaypoints.Count; i++) {
+			// If adjacent waypoint has not been visited already.
+			if (visited.IndexOf(waypoint.adjWaypoints[i].value) == -1) {
+				// Check its distance to the target waypoint.
+				distance = Vector3.Distance (waypoint.adjWaypoints[i].position, target.position);
+				if (distance < shortestDistance) {
+					shortestDistance = distance;
+					indexOfClosest = i;
+				}
+			}
+		}
+		return indexOfClosest == -1 ? null : waypoint.adjWaypoints[indexOfClosest];
+	}
+
 
     private void MoveNPC()
     {

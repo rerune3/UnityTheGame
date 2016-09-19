@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1584293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.28, y: 3.99, z: 0}
+  m_LocalPosition: {x: 8.92, y: -0.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1165,11 +1165,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 449716, guid: 3a65919cc65384a71b00407bd61bee5c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.7739
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 449716, guid: 3a65919cc65384a71b00407bd61bee5c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.5737
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 449716, guid: 3a65919cc65384a71b00407bd61bee5c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1197,15 +1197,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 449716, guid: 3a65919cc65384a71b00407bd61bee5c, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.3645818
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 449716, guid: 3a65919cc65384a71b00407bd61bee5c, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.3645816
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 449716, guid: 3a65919cc65384a71b00407bd61bee5c, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.3645816
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2316396, guid: 3a65919cc65384a71b00407bd61bee5c, type: 2}
       propertyPath: m_Enabled
@@ -1438,7 +1438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapSize: {x: 1024, y: 1024}
   exportScale: 0.01
-  spaceBetweenPoints: 32
+  spaceBetweenPoints: 16
 --- !u!50 &1154440752
 Rigidbody2D:
   serializedVersion: 2
@@ -1750,7 +1750,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708377089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: -0.66, z: 0}
+  m_LocalPosition: {x: 8.12, y: -1.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class WaypointLogic : MonoBehaviour {
 
-	public bool safe = true;
 	public Waypoint waypoint;
 
 	void Awake() {
@@ -16,13 +15,13 @@ public class WaypointLogic : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.name == "Collision") {
-			waypoint.badWaypoint = !safe;
+			waypoint.badWaypoint = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.name == "Collision") {
-			waypoint.badWaypoint = !safe;
+			waypoint.badWaypoint = true;
 		}
 	}
 
