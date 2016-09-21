@@ -20,6 +20,8 @@ public class Surveyor : MonoBehaviour {
 		connectWaypoints();
 		identifyBadWaypoints ();
 		drawWaypointConnections ();
+
+//		Utilities.
 	}
 
 	// Use this for initialization
@@ -39,8 +41,8 @@ public class Surveyor : MonoBehaviour {
 		for (int i = 0; i < waypoints.Length; i++) {
 			for (int j = 0; j < waypoints [i].Length; j++) {
 				w = waypoints [i] [j];
-				if (w.adjWaypoints.Count < 3) {
-					w.badWaypoint = true;
+				if (w.NumberOfNeighbors() < 3) {
+					w.SetBadWaypoint(true);
 				}
 			}
 		}
@@ -51,9 +53,11 @@ public class Surveyor : MonoBehaviour {
 		for (int i = 0; i < waypoints.Length; i++) {
 			for (int j = 0; j < waypoints [i].Length; j++) {
 				w = waypoints [i] [j];
-				for (int k = 0; k < w.adjWaypoints.Count; k++) {
-					Waypoint adjWaypoint = w.adjWaypoints [k];
-					Debug.DrawLine (w.position, adjWaypoint.position, Color.green, Mathf.Infinity);
+				for (int k = 0; k < w.Neighbors().Length; k++) {
+					if (w.Neighbors() [k] != null) {
+						Waypoint adjWaypoint = w.Neighbors() [k];
+						Debug.DrawLine (w.Position(), adjWaypoint.Position(), Color.green, Mathf.Infinity);
+					}
 				}
 			}
 		}
@@ -71,9 +75,10 @@ public class Surveyor : MonoBehaviour {
 					if (i - dir.y > -1 && i - dir.y < waypoints.Length &&
 						j + dir.x > -1 && j + dir.x < waypoints [i].Length) {
 						otherWaypoint = waypoints[(int)(i - dir.y)][(int)(j + dir.x)];
-						RaycastHit2D hit = Physics2D.Linecast(waypoint.position, otherWaypoint.position);
+						RaycastHit2D hit = Physics2D.Linecast(waypoint.Position(), otherWaypoint.Position());
 						if (hit.collider == null || hit.collider.name != "Collision") {
-							waypoints [i] [j].adjWaypoints.Add (otherWaypoint);
+							// Remember k is also the enum Dir.
+							waypoint.AddNeighbor(otherWaypoint, k);
 						}
 					}
 				}

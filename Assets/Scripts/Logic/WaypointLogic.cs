@@ -10,18 +10,18 @@ public class WaypointLogic : MonoBehaviour {
 
 	public void setWaypoint (Waypoint w) {
 		waypoint = w;
-		waypoint.badWaypoint = false;
+		waypoint.SetBadWaypoint(false);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.name == "Collision") {
-			waypoint.badWaypoint = true;
+			waypoint.SetBadWaypoint(true);
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.gameObject.name == "Collision") {
-			waypoint.badWaypoint = true;
+			waypoint.SetBadWaypoint(true);
 		}
 	}
 

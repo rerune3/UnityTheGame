@@ -9,6 +9,7 @@ TagManager:
   - Individual
   - Waypoints
   - Zone
+  - Surveyor
   layers:
   - Default
   - TransparentFX

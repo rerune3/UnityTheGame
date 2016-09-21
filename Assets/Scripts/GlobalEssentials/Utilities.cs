@@ -5,6 +5,8 @@ public class Utilities : MonoBehaviour {
 
 	private static TextDisplayLogic textDisplayLogic;
 	private static Vector3[] directions;
+	// Lets try really hard to NOT make any calls to this.
+	private static Surveyor surveyorLogic = null;
 
 	void Awake() {
 		
@@ -63,27 +65,45 @@ public class Utilities : MonoBehaviour {
 	public static Vector3 getDisplacement (Vector3 origin, Vector3 target) {
 		return target - origin;
 	}
-
-//	public Waypoint
-
+		
 	public static Waypoint GetClosestWaypointTo(Vector3 position) {
-		GameObject surveryor = GameObject.Find ("Surveyor");
-		Surveyor surveyLogic = surveryor.GetComponent<Surveyor> ();
-		Waypoint[][] waypoints = surveyLogic.GetWaypoints ();
+
+		if (surveyorLogic == null) {
+			surveyorLogic = GameObject.FindGameObjectWithTag("Surveyor").GetComponent<Surveyor> ();
+		}
 
 		float shortestDistance = Mathf.Infinity;
 		Vector2 indexOfClosest = new Vector2 (0, 0);
-		for (int i = 0; i < waypoints.Length; i++) {
-			for (int j = 0; j < waypoints [i].Length; j++) {
-				Waypoint w = waypoints [i] [j];
-				if (Vector3.Distance (w.position, position) < shortestDistance) {
-					shortestDistance = Vector3.Distance (w.position, position);
+		for (int i = 0; i < surveyorLogic.GetWaypoints().Length; i++) {
+			for (int j = 0; j < surveyorLogic.GetWaypoints() [i].Length; j++) {
+				Waypoint w = surveyorLogic.GetWaypoints() [i] [j];
+				if (w.IsBadWaypoint ())
+					continue;
+				if (Vector3.Distance (w.Position(), position) < shortestDistance) {
+					shortestDistance = Vector3.Distance (w.Position(), position);
 					indexOfClosest = new Vector2 (i, j);
 				}
 			}
 		}
 
-		return waypoints [(int)indexOfClosest.x] [(int)indexOfClosest.y];
+		float scaledDistance = surveyorLogic.spaceBetweenPoints * 10;
+		int x = (int)(position.x * 10);
+		int y = (int)(position.y * 10);
+
+		if (x % scaledDistance != 0) {
+			x++;
+		} 
+		if (y % scaledDistance != 0) {
+			y++;
+		}
+
+		Vector3 closestWaypointPos = new Vector3 ((float)x / 10, (float)y / 10);
+		int i2 = (int) (closestWaypointPos.x * 10 / 2);
+		int j2 = (int) (closestWaypointPos.y * 10 / 2);
+
+		Debug.Log (j2 + "," + i2 + " & " + indexOfClosest);
+
+		return surveyorLogic.GetWaypoints() [Mathf.Abs(j2)][Mathf.Abs(i2)];
 	}
 
 	public static Vector3 GetInvalidVector() {
@@ -123,7 +143,7 @@ public class Utilities : MonoBehaviour {
 			return Vector3.left;
 		}
 	}
-
+		
 	public static void displayText (string text) {
 		showTextDisplay ();
 		textDisplayLogic.displayText (text);
